@@ -22,5 +22,13 @@ Step 2: Write test cases
         [6,9,3,4,5,8]  1. 6x5=30, 2. 8x4=34 (correct)
 
 Step 3: Logic Solution
- 
+
+[7,1,2,3,9]   area = lxw -> length is the less of the two values
+              (a,b) 
+              min(a,b) x (bi - ai)
+              maxArea = 0
+
+        1.    min(7,1) * (1-0)  = 1  Eg. 
+                Compare with current maxArea 
+                If it is greater would be maxArea = 1  
 */
