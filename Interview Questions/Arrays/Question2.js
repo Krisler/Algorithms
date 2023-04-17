@@ -19,7 +19,7 @@ Step 2: Write test cases
         Base case: Input = [7,1,2,3,9] Output = 7x4 = 28  4-0 = 4
         [] = 0
         [7] = 0
-        [6,9,3,4,5,8]  1. 6x5=30, 2. 8x4=34 (correct)
+        [6,9,3,4,5,8]  1. 6x5=30, 2. 8x4=32 (correct)
 
 Step 3: Logic Solution
 
@@ -30,5 +30,28 @@ Step 3: Logic Solution
 
         1.    min(7,1) * (1-0)  = 1  Eg. 
                 Compare with current maxArea 
-                If it is greater would be maxArea = 1  
+                If it is greater would be maxArea = 1 
+                
+Step 4: Code Solution
 */
+
+const array = [6, 9, 3, 4, 5, 8];
+
+const maxAreaFun = function (array) {
+        let maxArea = 0;
+        if (array.length > 1) {
+                for (let p0 = 0; p0 < array.length; p0++) {
+                        for (let p1 = p0 + 1; p1 < array.length; p1++) {
+                                if (((Math.min(array[p0], array[p1])) * (p1 - p0)) > maxArea) {
+                                        maxArea = Math.min(array[p0], array[p1]) * (p1 - p0);
+                                }
+                        }
+                }
+                return maxArea;
+        } else {
+                return null;
+        }
+
+}
+
+console.log(maxAreaFun(array));
