@@ -42,8 +42,9 @@ const maxAreaFun = function (array) {
         if (array.length > 1) {
                 for (let p0 = 0; p0 < array.length; p0++) {
                         for (let p1 = p0 + 1; p1 < array.length; p1++) {
-                                if (((Math.min(array[p0], array[p1])) * (p1 - p0)) > maxArea) {
-                                        maxArea = Math.min(array[p0], array[p1]) * (p1 - p0);
+                                const height = Math.min(array[p0], array[p1]);
+                                if ((height * (p1 - p0)) > maxArea) {
+                                        maxArea = height * (p1 - p0);
                                 }
                         }
                 }
