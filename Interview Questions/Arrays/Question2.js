@@ -55,6 +55,8 @@ const maxAreaFun = function (array) {
         }
 
 }
+// Time: O(n^2);
+// Space: O(1)
 
 const maxAreaFunIm = function (array) {
         let maxArea = 0;
@@ -77,8 +79,8 @@ const maxAreaFunIm = function (array) {
                 return null;
         }
 }
-
-// Time: O(n^2);
+// Time: O(n);
 // Space: O(1)
+
 console.log(maxAreaFun(array));
 console.log(maxAreaFunIm(array));
