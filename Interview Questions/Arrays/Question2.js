@@ -33,6 +33,7 @@ Step 3: Logic Solution
                 If it is greater would be maxArea = 1 
                 
 Step 4: Code Solution
+Step 5: Optimize code -> Anlayze problem to identify what changes to make 
 */
 
 const array = [6, 9, 3, 4, 5, 8];
@@ -55,4 +56,29 @@ const maxAreaFun = function (array) {
 
 }
 
+const maxAreaFunIm = function (array) {
+        let maxArea = 0;
+        if (array.length > 1) {
+                let p1 = array.length - 1;
+                let p0 = 0;
+                while (p0 < p1) {
+                        const height = Math.min(array[p0], array[p1]);
+                        const width = p1 - p0;
+                        const area = width * height;
+                        maxArea = Math.max(maxArea, area);
+                        if (array[p0] <= array[p1]) {
+                                p0++;
+                        } else {
+                                p1--;
+                        }
+                }
+                return maxArea;
+        } else {
+                return null;
+        }
+}
+
+// Time: O(n^2);
+// Space: O(1)
 console.log(maxAreaFun(array));
+console.log(maxAreaFunIm(array));
